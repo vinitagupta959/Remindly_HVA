@@ -1,295 +1,358 @@
-# Remindly - Full Stack Application
+# 🧠 Remindly – AI-Powered Spaced Repetition Learning Platform
 
-A complete spaced repetition learning platform with adaptive quizzes, AI-powered evaluations, gamification, and a competitive leaderboard.
+> **A Full-Stack MERN application built during the HyperVerge Academy (HVA) Hackathon to improve long-term learning through Spaced Repetition, AI-powered evaluations, adaptive quizzes, and gamification.**
 
-## Features
+---
 
-✅ **Authentication** - JWT-based sign up, sign in, and secure session management
-✅ **Spaced Repetition** - Automatic revision scheduling (Day 1, 7, 30)
-✅ **AI Integration** - Gemini API for intelligent quiz generation and explanation evaluation
-✅ **Adaptive Learning** - Difficulty adjusts based on user performance
-✅ **Gamification** - Points system, streaks, leaderboard rankings
-✅ **Quiz System** - Multiple-choice questions with instant feedback
-✅ **User Dashboard** - Track overdue/pending/upcoming topics at a glance
-✅ **Leaderboard** - Real-time rankings of top performers
-✅ **Responsive Design** - Mobile, tablet, and desktop support
+## 📌 About the Project
 
-## Tech Stack
+Remindly is a smart learning platform designed to help users remember concepts more effectively using the **Spaced Repetition** learning technique. Instead of simply storing notes, the platform schedules revisions at scientifically proven intervals, evaluates users' understanding using AI, and reinforces learning through adaptive quizzes.
 
-### Backend
-- **Runtime**: Node.js
-- **Framework**: Express.js
-- **Database**: MongoDB with Mongoose ODM
-- **Authentication**: JWT (JSON Web Tokens)
-- **Password**: bcrypt for secure hashing
-- **AI**: Google Gemini API for intelligent features
-- **Port**: 5000
+This project was developed during the **HyperVerge Academy (HVA) Hackathon** as a team project. I primarily contributed as a **Backend Developer**, where I designed and developed REST APIs, implemented authentication, integrated MongoDB, built the spaced repetition algorithm, and integrated Google Gemini AI for intelligent learning features.
 
-### Frontend
-- **Framework**: React 18.2.0
-- **Routing**: React Router v6
-- **Build Tool**: Vite
-- **HTTP Client**: Fetch API
-- **State Management**: Context API
-- **Styling**: CSS
-- **Port**: 5173
+---
 
-## Project Structure
+# ✨ Features
 
-```
+## 🔐 Authentication
+
+* User Registration & Login
+* JWT-based Authentication
+* Secure Password Hashing using bcrypt
+* Protected Routes
+
+## 📚 Topic Management
+
+* Create learning topics
+* Edit and delete topics
+* View revision history
+* Track learning progress
+
+## 🧠 Spaced Repetition
+
+* Automatic revision scheduling
+* Day 1 Revision
+* Day 7 Revision
+* Day 30 Revision
+* Memory strength updates after every revision
+
+## 🤖 AI Features
+
+* AI-generated quizzes using Google Gemini
+* AI evaluation of user explanations
+* Adaptive quiz difficulty
+* Instant AI feedback
+
+## 📝 Quiz System
+
+* Multiple Choice Questions
+* Adaptive Difficulty Levels
+* Instant Score Calculation
+* Quiz Result History
+
+## 🏆 Gamification
+
+* Points System
+* Learning Streaks
+* Global Leaderboard
+* Performance Rankings
+
+## 📊 Dashboard
+
+* Today's Revisions
+* Overdue Topics
+* Upcoming Revisions
+* Progress Summary
+
+## 📱 Responsive Design
+
+* Desktop
+* Tablet
+* Mobile Friendly
+
+---
+
+# 👩‍💻 My Contribution
+
+### Backend Development
+
+* Designed RESTful APIs using Express.js
+* Implemented JWT Authentication & Authorization
+* Integrated MongoDB using Mongoose
+* Created Topic, User and QuizResult Models
+* Built CRUD operations for Topics
+* Developed Spaced Repetition Scheduling Logic
+* Implemented Quiz Result APIs
+* Built Leaderboard APIs
+* Integrated Google Gemini API
+* Added Secure Password Hashing using bcrypt
+* Implemented User-wise Data Isolation
+* Configured Environment Variables and CORS
+
+### Frontend Integration
+
+* Connected Backend APIs with React
+* Implemented Authentication Flow
+* Integrated Dashboard
+* Connected Topic Management Pages
+* Integrated Quiz APIs
+* Fixed API Integration Issues
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+* React 18
+* React Router DOM
+* Vite
+* Context API
+* Fetch API
+* CSS
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT
+* bcrypt
+* Google Gemini API
+
+---
+
+# 📁 Project Structure
+
+```text
 remindly-app/
+│
 ├── backend/
 │   ├── config/
-│   │   └── database.js
-│   ├── models/
-│   │   ├── User.js
-│   │   ├── Topic.js
-│   │   └── QuizResult.js
 │   ├── controllers/
-│   │   ├── authController.js
-│   │   ├── topicController.js
-│   │   ├── aiController.js
-│   │   ├── quizController.js
-│   │   └── leaderboardController.js
-│   ├── routes/
-│   │   ├── authRoutes.js
-│   │   ├── topicRoutes.js
-│   │   ├── aiRoutes.js
-│   │   ├── quizRoutes.js
-│   │   └── leaderboardRoutes.js
 │   ├── middleware/
-│   │   └── auth.js
+│   ├── models/
+│   ├── routes/
 │   ├── utils/
-│   │   ├── jwt.js
-│   │   ├── revisionLogic.js
-│   │   └── geminiAPI.js
 │   ├── server.js
-│   ├── package.json
-│   └── .env.example
+│   └── package.json
 │
 └── frontend/
     ├── src/
     │   ├── components/
-    │   │   ├── ProtectedRoute.jsx
-    │   │   └── Header.jsx
-    │   ├── pages/
-    │   │   ├── SignUp.jsx
-    │   │   ├── SignIn.jsx
-    │   │   ├── Dashboard.jsx
-    │   │   ├── AddTopic.jsx
-    │   │   ├── TopicDetail.jsx
-    │   │   └── Leaderboard.jsx
     │   ├── context/
-    │   │   └── AuthContext.jsx
+    │   ├── pages/
     │   ├── services/
-    │   │   └── api.js
     │   ├── styles/
-    │   │   ├── index.css
-    │   │   ├── Header.css
-    │   │   ├── Auth.css
-    │   │   ├── Dashboard.css
-    │   │   ├── AddTopic.css
-    │   │   ├── TopicDetail.css
-    │   │   └── Leaderboard.css
     │   ├── App.jsx
     │   └── main.jsx
-    ├── index.html
-    ├── vite.config.js
-    ├── package.json
-    └── .env.example
+    └── package.json
 ```
 
-## Setup Instructions
+---
 
-### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB (local or Atlas)
-- Google Gemini API key
+# ⚙️ Installation
 
-### Backend Setup
+## Clone Repository
 
-1. **Navigate to backend folder**
-   ```bash
-   cd backend
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Create .env file** (copy from .env.example)
-   ```bash
-   cp .env.example .env
-   ```
-
-4. **Configure .env file**
-   ```
-   PORT=5000
-   MONGODB_URI=mongodb://localhost:27017/remindly
-   JWT_SECRET=your-secret-key-here
-   GEMINI_API_KEY=your-gemini-api-key-here
-   CORS_ORIGIN=http://localhost:5173
-   NODE_ENV=development
-   ```
-
-5. **Ensure MongoDB is running**
-   - Local: `mongod`
-   - Or use MongoDB Atlas connection string
-
-6. **Start backend**
-   ```bash
-   npm start
-   # or for development with auto-reload
-   npm run dev
-   ```
-
-Backend will be running at `http://localhost:5000`
-
-### Frontend Setup
-
-1. **Open new terminal and navigate to frontend folder**
-   ```bash
-   cd frontend
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-Frontend will be running at `http://localhost:5173`
-
-## API Endpoints
-
-### Authentication
-- `POST /api/auth/signup` - Create new account
-- `POST /api/auth/signin` - Login
-- `GET /api/auth/me` - Get current user
-
-### Topics
-- `GET /api/topics` - Get all topics for user
-- `POST /api/topics` - Create new topic
-- `GET /api/topics/:id` - Get single topic
-- `PUT /api/topics/:id` - Update topic
-- `DELETE /api/topics/:id` - Delete topic
-- `POST /api/topics/:id/mark-revised` - Mark topic as revised
-
-### AI Features
-- `POST /api/ai/generate-quiz` - Generate quiz questions
-- `POST /api/ai/evaluate-explanation` - Score user's understanding
-- `POST /api/ai/generate-adaptive-quiz` - Generate difficulty-adjusted quiz
-
-### Quiz Results
-- `POST /api/quiz-results` - Submit quiz attempt
-- `GET /api/quiz-results/:topicId` - Get results for topic
-
-### Leaderboard
-- `GET /api/leaderboard` - Get top 50 users
-
-## User Flow
-
-1. **Sign Up** → Create account with email/password
-2. **Dashboard** → View today's, overdue, and upcoming topics
-3. **Add Topic** → Create new topic with 50-100 word explanation
-4. **Topic Detail** → Write explanation, get AI feedback, unlock quiz
-5. **Quiz** → Answer adaptive questions, earn points
-6. **Leaderboard** → Compete with other users
-7. **Spaced Repetition** → System automatically schedules revisions
-
-## Spaced Repetition Schedule
-
-- Day 0: Initial topic creation
-- Day 1: First revision (pending)
-- Day 7: Second revision
-- Day 30: Third revision
-- Custom adjustments based on quiz performance
-
-## Points System
-
-Base points: 10
-- Easy difficulty: 1x multiplier
-- Medium difficulty: 1.5x multiplier
-- Hard difficulty: 2x multiplier
-- Score percentage applied: `basePoints × (score/totalQuestions) × difficultyMultiplier`
-
-## Environment Variables
-
-### Backend (.env)
+```bash
+git clone https://github.com/vinitagupta959/HVA_Remindly.git
+cd HVA_Remindly
 ```
+
+---
+
+## Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file:
+
+```env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/remindly
-JWT_SECRET=your-super-secret-key-change-this
-GEMINI_API_KEY=your-google-gemini-api-key
+JWT_SECRET=your-secret-key
+GEMINI_API_KEY=your-gemini-api-key
 CORS_ORIGIN=http://localhost:5173
 NODE_ENV=development
 ```
 
-## Scripts
+Run Backend
 
-### Backend
 ```bash
-npm start          # Production start
-npm run dev        # Development with nodemon
+npm run dev
 ```
 
-### Frontend
+---
+
+## Frontend Setup
+
 ```bash
-npm run dev        # Development server
-npm run build      # Production build
-npm run preview    # Preview production build
+cd frontend
+npm install
+npm run dev
 ```
 
-## Performance Notes
+Frontend
 
-- JWT tokens expire after 30 days
-- Memory strength decreases 5% per day without revision
-- Adaptive multiplier adjusts quiz difficulty
-- Streak resets after missing a revision day
+```text
+http://localhost:5173
+```
 
-## Security
+Backend
 
-- Passwords hashed with bcrypt (10 salt rounds)
-- JWT tokens signed with secret key
-- Protected routes require valid token
-- CORS configured for frontend origin only
-- User data isolated by userId in database
+```text
+http://localhost:5000
+```
 
-## Troubleshooting
+---
 
-### Backend won't connect to MongoDB
-- Ensure MongoDB service is running
-- Check MONGODB_URI in .env
-- Verify credentials if using Atlas
+# 🔗 API Endpoints
 
-### Frontend API calls failing
-- Check backend is running on port 5000
-- Verify CORS_ORIGIN in .env
-- Check browser console for detailed errors
+## Authentication
 
-### Gemini API errors
-- Verify API key is valid
-- Check API quota hasn't been exceeded
-- Ensure question parsing is working
+| Method | Endpoint         |
+| ------ | ---------------- |
+| POST   | /api/auth/signup |
+| POST   | /api/auth/signin |
+| GET    | /api/auth/me     |
 
-## Future Enhancements
+## Topics
 
-- [ ] Social features (share topics, study groups)
-- [ ] Dark mode
-- [ ] Topic tags and filtering
-- [ ] Study session timing
-- [ ] Mobile app (React Native)
-- [ ] Export/import topics
-- [ ] Advanced analytics dashboard
-- [ ] Email reminders
+| Method | Endpoint                     |
+| ------ | ---------------------------- |
+| GET    | /api/topics                  |
+| POST   | /api/topics                  |
+| GET    | /api/topics/:id              |
+| PUT    | /api/topics/:id              |
+| DELETE | /api/topics/:id              |
+| POST   | /api/topics/:id/mark-revised |
 
-## License
+## AI
 
-MIT
-#   H V A _ R e m i n d l y  
- 
+| Method | Endpoint                       |
+| ------ | ------------------------------ |
+| POST   | /api/ai/generate-quiz          |
+| POST   | /api/ai/evaluate-explanation   |
+| POST   | /api/ai/generate-adaptive-quiz |
+
+## Quiz Results
+
+| Method | Endpoint                   |
+| ------ | -------------------------- |
+| POST   | /api/quiz-results          |
+| GET    | /api/quiz-results/:topicId |
+
+## Leaderboard
+
+| Method | Endpoint         |
+| ------ | ---------------- |
+| GET    | /api/leaderboard |
+
+---
+
+# 🔄 Application Flow
+
+```text
+User Registration/Login
+          │
+          ▼
+     Dashboard
+          │
+          ▼
+     Create Topic
+          │
+          ▼
+ Write Explanation
+          │
+          ▼
+ AI Evaluation (Gemini)
+          │
+          ▼
+ Adaptive Quiz
+          │
+          ▼
+ Earn Points
+          │
+          ▼
+ Leaderboard
+          │
+          ▼
+ Scheduled Revision
+```
+
+---
+
+# 🧠 Spaced Repetition Schedule
+
+| Stage           | Day    |
+| --------------- | ------ |
+| Topic Created   | Day 0  |
+| First Revision  | Day 1  |
+| Second Revision | Day 7  |
+| Third Revision  | Day 30 |
+
+The revision schedule automatically adapts based on quiz performance and user progress.
+
+---
+
+# 🏆 Points System
+
+```
+Base Points = 10
+
+Easy Difficulty   = ×1
+Medium Difficulty = ×1.5
+Hard Difficulty   = ×2
+
+Final Score =
+Base Points × (Quiz Score / Total Questions) × Difficulty Multiplier
+```
+
+---
+
+# 🔒 Security
+
+* JWT Authentication
+* Password Hashing using bcrypt
+* Protected API Routes
+* Environment Variables
+* User-wise Data Isolation
+* Secure CORS Configuration
+
+---
+
+# 🚀 Future Improvements
+
+* Dark Mode
+* Study Groups
+* Topic Categories & Tags
+* Email Reminder System
+* Push Notifications
+* Analytics Dashboard
+* Topic Import & Export
+* Mobile App (React Native)
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# 👩‍💻 Author
+
+**Vinita Gupta**
+
+**Backend Developer | MERN Stack Developer**
+
+GitHub: https://github.com/vinitagupta959
+
+---
+
+⭐ If you found this project helpful, don't forget to give it a **Star**.
