@@ -2,101 +2,77 @@
 
 > **A Full-Stack MERN application built during the HyperVerge Academy (HVA) Hackathon to improve long-term learning through Spaced Repetition, AI-powered evaluations, adaptive quizzes, and gamification.**
 
+🌐 **Live Demo:** https://hva-remindly-1.onrender.com
+
+> Create a new account using the **Sign Up** page to explore all features.
+
 ---
 
-## 📌 About the Project
+# 📌 About the Project
 
-Remindly is a smart learning platform designed to help users remember concepts more effectively using the **Spaced Repetition** learning technique. Instead of simply storing notes, the platform schedules revisions at scientifically proven intervals, evaluates users' understanding using AI, and reinforces learning through adaptive quizzes.
+Remindly is an AI-powered learning platform that helps users retain knowledge through the **Spaced Repetition** technique. Instead of simply storing notes, the application schedules revisions at scientifically proven intervals, evaluates users' understanding using AI, and reinforces learning with adaptive quizzes.
 
-This project was developed during the **HyperVerge Academy (HVA) Hackathon** as a team project. I primarily contributed as a **Backend Developer**, where I designed and developed REST APIs, implemented authentication, integrated MongoDB, built the spaced repetition algorithm, and integrated Google Gemini AI for intelligent learning features.
+This project was developed during the **HyperVerge Academy (HVA) Hackathon** as a collaborative team project. I primarily contributed as a **Backend Developer**, where I designed and implemented REST APIs, JWT authentication, MongoDB integration, the spaced repetition algorithm, quiz management, leaderboard functionality, and Google Gemini AI integration.
 
 ---
 
 # ✨ Features
 
-## 🔐 Authentication
+### 🔐 Authentication
 
 * User Registration & Login
-* JWT-based Authentication
-* Secure Password Hashing using bcrypt
+* JWT Authentication
+* Secure Password Hashing with bcrypt
 * Protected Routes
 
-## 📚 Topic Management
+### 📚 Topic Management
 
-* Create learning topics
-* Edit and delete topics
-* View revision history
-* Track learning progress
+* Create, Update and Delete Topics
+* View Topic Details
+* Revision History
+* Track Learning Progress
 
-## 🧠 Spaced Repetition
+### 🧠 Spaced Repetition
 
-* Automatic revision scheduling
+* Automatic Revision Scheduling
 * Day 1 Revision
 * Day 7 Revision
 * Day 30 Revision
-* Memory strength updates after every revision
+* Memory Strength Tracking
 
-## 🤖 AI Features
+### 🤖 AI Features
 
-* AI-generated quizzes using Google Gemini
-* AI evaluation of user explanations
-* Adaptive quiz difficulty
-* Instant AI feedback
+* AI-generated Quizzes
+* AI-based Explanation Evaluation
+* Adaptive Quiz Difficulty
+* Instant Feedback using Google Gemini
 
-## 📝 Quiz System
+### 📝 Quiz System
 
 * Multiple Choice Questions
-* Adaptive Difficulty Levels
-* Instant Score Calculation
-* Quiz Result History
+* Difficulty Levels (Easy, Medium, Hard)
+* Quiz History
+* Performance Tracking
 
-## 🏆 Gamification
+### 🏆 Gamification
 
 * Points System
 * Learning Streaks
 * Global Leaderboard
-* Performance Rankings
+* Rank Tracking
 
-## 📊 Dashboard
+### 📊 Dashboard
 
 * Today's Revisions
 * Overdue Topics
-* Upcoming Revisions
-* Progress Summary
+* Upcoming Topics
+* Learning Summary
 
-## 📱 Responsive Design
+### 📱 Responsive UI
 
 * Desktop
 * Tablet
 * Mobile Friendly
-
----
-
-# 👩‍💻 My Contribution
-
-### Backend Development
-
-* Designed RESTful APIs using Express.js
-* Implemented JWT Authentication & Authorization
-* Integrated MongoDB using Mongoose
-* Created Topic, User and QuizResult Models
-* Built CRUD operations for Topics
-* Developed Spaced Repetition Scheduling Logic
-* Implemented Quiz Result APIs
-* Built Leaderboard APIs
-* Integrated Google Gemini API
-* Added Secure Password Hashing using bcrypt
-* Implemented User-wise Data Isolation
-* Configured Environment Variables and CORS
-
-### Frontend Integration
-
-* Connected Backend APIs with React
-* Implemented Authentication Flow
-* Integrated Dashboard
-* Connected Topic Management Pages
-* Integrated Quiz APIs
-* Fixed API Integration Issues
 
 ---
 
@@ -117,9 +93,39 @@ This project was developed during the **HyperVerge Academy (HVA) Hackathon** as 
 * Express.js
 * MongoDB
 * Mongoose
-* JWT
+* JWT Authentication
 * bcrypt
 * Google Gemini API
+  ---
+
+# 👩‍💻 My Contribution
+
+As a **Backend Developer** in the HVA Hackathon team, I worked on the core backend architecture and API development.
+
+### Backend Development
+
+* Designed RESTful APIs using Express.js
+* Implemented JWT Authentication & Authorization
+* Integrated MongoDB using Mongoose ODM
+* Created User, Topic and QuizResult Models
+* Developed CRUD APIs for Topic Management
+* Built the Spaced Repetition Scheduling Logic
+* Implemented Quiz Result APIs
+* Developed Leaderboard APIs
+* Integrated Google Gemini API
+* Configured Environment Variables
+* Added Secure Password Hashing using bcrypt
+* Implemented User-specific Data Isolation
+* Configured CORS
+
+### Frontend Integration
+
+* Connected React with Backend APIs
+* Implemented Authentication Flow
+* Integrated Dashboard APIs
+* Connected Topic Management
+* Integrated Quiz APIs
+* Fixed API Integration Issues
 
 ---
 
@@ -136,7 +142,8 @@ remindly-app/
 │   ├── routes/
 │   ├── utils/
 │   ├── server.js
-│   └── package.json
+│   ├── package.json
+│   └── .env.example
 │
 └── frontend/
     ├── src/
@@ -147,14 +154,15 @@ remindly-app/
     │   ├── styles/
     │   ├── App.jsx
     │   └── main.jsx
-    └── package.json
+    ├── package.json
+    └── .env.example
 ```
 
 ---
 
 # ⚙️ Installation
 
-## Clone Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/vinitagupta959/HVA_Remindly.git
@@ -170,7 +178,7 @@ cd backend
 npm install
 ```
 
-Create a `.env` file:
+Create a `.env` file.
 
 ```env
 PORT=5000
@@ -181,7 +189,7 @@ CORS_ORIGIN=http://localhost:5173
 NODE_ENV=development
 ```
 
-Run Backend
+Start Backend
 
 ```bash
 npm run dev
@@ -255,7 +263,7 @@ http://localhost:5000
 
 ---
 
-# 🔄 Application Flow
+# 🔄 Application Workflow
 
 ```text
 User Registration/Login
@@ -270,7 +278,7 @@ User Registration/Login
  Write Explanation
           │
           ▼
- AI Evaluation (Gemini)
+ AI Evaluation
           │
           ▼
  Adaptive Quiz
@@ -289,12 +297,12 @@ User Registration/Login
 
 # 🧠 Spaced Repetition Schedule
 
-| Stage           | Day    |
-| --------------- | ------ |
-| Topic Created   | Day 0  |
-| First Revision  | Day 1  |
-| Second Revision | Day 7  |
-| Third Revision  | Day 30 |
+| Stage           | Schedule |
+| --------------- | -------- |
+| Topic Creation  | Day 0    |
+| First Revision  | Day 1    |
+| Second Revision | Day 7    |
+| Third Revision  | Day 30   |
 
 The revision schedule automatically adapts based on quiz performance and user progress.
 
@@ -302,15 +310,15 @@ The revision schedule automatically adapts based on quiz performance and user pr
 
 # 🏆 Points System
 
-```
+```text
 Base Points = 10
 
 Easy Difficulty   = ×1
 Medium Difficulty = ×1.5
 Hard Difficulty   = ×2
 
-Final Score =
-Base Points × (Quiz Score / Total Questions) × Difficulty Multiplier
+Final Points =
+Base Points × (Score / Total Questions) × Difficulty Multiplier
 ```
 
 ---
@@ -319,23 +327,33 @@ Base Points × (Quiz Score / Total Questions) × Difficulty Multiplier
 
 * JWT Authentication
 * Password Hashing using bcrypt
-* Protected API Routes
-* Environment Variables
-* User-wise Data Isolation
-* Secure CORS Configuration
+* Protected Routes
+* Secure Environment Variables
+* User-specific Data Isolation
+* CORS Protection
 
 ---
 
-# 🚀 Future Improvements
+# 🚀 Deployment
+
+| Service  | Platform      |
+| -------- | ------------- |
+| Frontend | Render        |
+| Backend  | Render        |
+| Database | MongoDB Atlas |
+
+---
+
+# 🔮 Future Improvements
 
 * Dark Mode
 * Study Groups
-* Topic Categories & Tags
-* Email Reminder System
+* Topic Tags & Categories
+* Email Reminders
 * Push Notifications
-* Analytics Dashboard
-* Topic Import & Export
-* Mobile App (React Native)
+* Advanced Analytics Dashboard
+* Topic Export & Import
+* Mobile Application (React Native)
 
 ---
 
@@ -349,10 +367,10 @@ This project is licensed under the **MIT License**.
 
 **Vinita Gupta**
 
-**Backend Developer | MERN Stack Developer**
+Backend Developer | MERN Stack Developer
 
-GitHub: https://github.com/vinitagupta959
+**GitHub:** https://github.com/vinitagupta959
 
 ---
 
-⭐ If you found this project helpful, don't forget to give it a **Star**.
+⭐ **If you like this project, don't forget to give it a Star!**
